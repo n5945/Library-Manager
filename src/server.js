@@ -7,7 +7,7 @@ app.use(express.json())
 
 const users = [];
 const books = [];
-
+/*
 function checkExistsUserAccount(req, res, next){
     const{email} = req.headers;
     const user = users.find(user => user.email === email)
@@ -18,7 +18,7 @@ function checkExistsUserAccount(req, res, next){
     req.user = user
     next()
 }
-
+*/
 app.post("/users", (req, res) => {
         const {nome, email, telefone} = req.body
 
@@ -47,7 +47,7 @@ app.get("/users", (req, res) => {
     res.status(200).json(users)
 })
 
-/*Cadastro de livros*/
+/*Cadastro de livros
 
 app.post("/bookmanager", (req, res) => {
   
@@ -74,7 +74,7 @@ app.get("/bookmanager", (req, res) => {
     return res.status(200).json(books)
 })
 
-/*Emprestimo de livros*/
+Emprestimo de livros
 
 app.patch("/bookmanager/:idBook/availability", checkExistsUserAccount (req, res) => {
     const {idBook} = req.params;
@@ -96,7 +96,7 @@ app.patch("/bookmanager/:idBook/availability", checkExistsUserAccount (req, res)
     }
 })
 
-/*Devolução de livros*/
+Devolução de livros
 
 app.patch("/bookmanager/:idBook/availability", checkExistsUserAccount (req, res) => {
     const :{idBook} = req.params,
@@ -113,7 +113,7 @@ app.patch("/bookmanager/:idBook/availability", checkExistsUserAccount (req, res)
     return res.status(200).json("Livro devolvido com sucesso!")
 })
 
-/*Consulta de livros*/
+Consulta de livros
 
 app.get("/books/consult", (req, res) => {
     const {title, author, category} = req.query;

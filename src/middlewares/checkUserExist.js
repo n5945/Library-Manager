@@ -10,4 +10,4 @@ async function checkUserExist(req, res, next) {
     next( )
 }
 
-modules.exports = checkUserExist
+module.exports = checkUserExist

@@ -20,7 +20,7 @@ function checkExistsUserAccount(req, res, next){
     next()
 }
 */
-app.post("/users", (req, res) => {
+/*app.post("/users", (req, res) => {
         const {nome, email, telefone} = req.body
 
         const userAlreadyExists = users.some(user => user.email === email)
@@ -46,7 +46,7 @@ app.post("/users", (req, res) => {
 
 app.get("/users", (req, res) => {
     res.status(200).json(users)
-})
+})*/
 
 /*Cadastro de livros
 

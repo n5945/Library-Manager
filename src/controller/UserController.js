@@ -20,6 +20,14 @@ async listUser(req, res) {
 
 }
 
+async listUserById (req, res) {
+    const {user_id} = req.params
+
+    const users = await knex("users").where({id:user_id})
+
+        res.status(200).json(users)
+} 
+
 }
 
 module.exports = UserController

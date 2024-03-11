@@ -12,6 +12,12 @@ async createBook(req, res) {
     res.status(201).json("Livro cadastrado com sucesso.")
 }
 
+async listBooks(req, res) {
+    const books = await knex("books")
+
+    res.status(200).json(books)
+}
+
 }
 
 module.exports = BookController

@@ -7,8 +7,9 @@ exports.up = (knex) => {
         table.string("category").notNullable();
         table.string("pages").notNullable();
         table.string("publicated").notNullable();
-        table.boolean("availability").defaultTo("false")
-               
+        table.boolean("availability").defaultTo("true")
+        table.timestamp("created_at").defaultTo(knex.fn.now());
+        table.timestamp("updated_at").defaultTo(knex.fn.now());      
     })
      
 };

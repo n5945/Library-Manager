@@ -6,8 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(routes)
 
-const users = [];
-const books = [];
+
 /*
 function checkExistsUserAccount(req, res, next){
     const{email} = req.headers;

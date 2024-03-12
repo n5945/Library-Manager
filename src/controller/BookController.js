@@ -23,7 +23,11 @@ async loanBook(req, res) {
 }
 
 async updateBookStatus(req, res) {
-    
+    const {id} = req.params
+
+        await knex("books").where({id}).update({availability: true})
+
+        return res.status(200).json("Status do livro atualizado com sucesso.")
 }
 
 async devolutionBook(req, res) {

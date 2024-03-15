@@ -6,6 +6,10 @@ const app = express()
 app.use(express.json())
 app.use(routes)
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 /*
 function checkExistsUserAccount(req, res, next){
